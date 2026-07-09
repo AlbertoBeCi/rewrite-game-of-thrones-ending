@@ -1,0 +1,131 @@
+/* 🎨 CONFIGURACIÓN DE VARIABLES VISUALES */
+/* Según tu petición: Usamos estrictamente estos códigos hexadecimales */
+:root {
+    --color-accent-primary: #331C0E;  /* Negro profundo / Texto principal oscuro */
+    --color-secondary:   #67331E;     /* Marrón rojizo noble (Piel/Pieles) */
+    --color-accent-warm: #B9540C;     /* Naranja quemado (Fuego/Terra) */
+    --color-highlight:   #FFF190;     /* Amarillo dorado pálido (Luces/Lunas) */
+    --color-bg-light:    #FCFEF0;     /* Crema casi blanco (Papel antiguo/Damasco) */
+    --color-text-main:   #C38D5F;     /* Beige oscuro / Bronce (Texto suave) */
+    
+    --font-serif: 'Cinzel', serif;    /* Fuente estilo romano/épico (Recomendada) */
+    --font-sans: 'Lato', sans-serif;   /* Fuente moderna para contrastes si es necesario */
+}
+
+/* 🌑 RESET BÁSICO Y FONDO GLOBAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Estilo Cinematográfico Oscuro: Fondo muy oscuro, casi negro */
+    background-color: var(--color-accent-primary); 
+    color: var(--color-text-main);
+    
+    /* Tipografía para sentir "Epicidad" */
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    line-height: 1.6;
+    
+    /* Layout minimalista y centrado */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ocupa toda la pantalla verticalmente */
+    overflow-x: hidden; /* Evita scroll horizontal no deseado */
+    
+    /* Toque visual sutil (Opcional para efecto ciné): Textura de ruido o granulado */
+    background-image: radial-gradient(circle at center, #3e2215 0%, #0f0806 100%);
+}
+
+/* 🏛️ CONTENEDOR PRINCIPAL (Wrapper) */
+.app-container {
+    width: 90%;
+    max-width: 800px; /* Ancho máximo para lectura cómoda en tablets/PC */
+    text-align: center; /* Centrado horizontal de todos los textos */
+    padding: 2rem;
+    
+    /* Transiciones suaves para microinteracciones futuras */
+    transition: all 0.5s ease-in-out;
+}
+
+/* 📜 ESTILOS DE ENCABEZADOS (HERO) */
+h1, h2, h3 {
+    color: var(--color-highlight); /* El título brilla como oro pálido */
+    text-transform: uppercase;
+    letter-spacing: 3px; /* Espaciado amplio para estilo clásico romano */
+    margin-bottom: 1.5rem;
+}
+
+h1 {
+    font-size: 3.5rem;
+    border-bottom: 2px solid var(--color-accent-warm); /* Línea decorativa inferior */
+    padding-bottom: 1rem;
+    display: inline-block; /* Para centrarlo luego con padding del contenedor */
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-top: 3rem;
+    color: var(--color-highlight);
+}
+
+p {
+    font-family: var(--font-sans); /* Texto más legible para párrafos largos */
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 1.5rem auto; /* Márgenes automáticos a la derecha e izquierda para centrar bloque de texto */
+}
+
+/* 🖐️ ESTILOS DE BOTONES (Interactividad sutil) */
+button {
+    background-color: transparent;
+    border: 2px solid var(--color-accent-warm); /* Borde color "fuego" */
+    color: var(--color-highlight);
+    font-family: var(--font-sans);
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+    margin-top: 1rem;
+    
+    /* Efecto de sombra suave tipo neón/fuego */
+    box-shadow: 0 0 10px rgba(185, 84, 12, 0.3);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--color-accent-warm);
+    color: var(--color-accent-primary); /* Texto oscuro sobre fondo naranja */
+    box-shadow: 0 0 20px rgba(185, 84, 12, 0.6);
+}
+
+/* 🎭 CLASES DE UTILIDAD PARA LA LÓGICA (OCULTO/VISIBLE) */
+.hidden {
+    display: none !important; /* Oculta completamente el bloque para la lógica JS */
+}
+
+/* 🖼️ ESTILO PLACEHOLDER PARA IMÁGENES/FINALS */
+.media-placeholder {
+    width: 100%;
+    height: 300px; /* Altura base para mantener proporción */
+    background-color: #2a1a10;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--color-secondary);
+    color: var(--color-text-main);
+    font-style: italic;
+}
+
+/* Responsive básico para móviles */
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    .app-container { width: 95%; padding: 1.5rem; }
+}

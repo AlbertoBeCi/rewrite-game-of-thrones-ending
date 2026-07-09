@@ -1,27 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Juego de Tronos - Quiz Cinematográfico</title>
+    <!-- Aquí iremos a por los estilos CSS para dar la atmósfera épica -->
+    <link rel="stylesheet" href="styles.css">
+</head>
 <body>
-  <header></header>
 
-  <main>
+    <!-- 🎬 ZONA 1: HEADER / HERO (Referencia Figma: Fondo oscuro, tipografía grande) -->
+    <header class="hero-section">
+        <div class="content-wrapper">
+            <h1 class="main-title">Tu Camino a Westeros</h1>
+            <p class="subtitle">Responde 3 preguntas. Decide tu destino.</p>
+            <!-- Botón de "Empezar" inicial, visible hasta que se cargue el quiz -->
+            <button id="btn-start-quiz">Comenzar la Prueba</button>
+        </div>
+    </header>
 
-    <section id="hero">
-      <h1>Rewrite the ending</h1>
-      <p>Build the experience from this starter and shape your own version of the story.</p>
-      <button id="start-btn" type="button">Start the journey</button>
-    </section>
+    <!-- 🧠 ZONA 2: CONTENEDOR DEL CUESTIONARIO (Aquí inyectaremos las preguntas dinámicamente) -->
+    <main id="quiz-container" class="hidden">
+        <!-- El contenido de las preguntas se generará con JS, no escribimos HTML manual aquí -->
+    </main>
 
-    <section id="questionnaire">
-      <h2>Questionnaire</h2>
-      <p>Replace this placeholder with your questions and choices.</p>
-    </section>
+    <!-- 🏆 ZONA 3: CONTENEDOR DEL RESULTADO (Aquí mostraremos el final y la imagen/video) -->
+    <main id="result-container" class="hidden">
+        <div class="endings-content">
+            <h2>Tu Destino Ha Sido:</h2>
+            <p id="ending-text" class="ending-narrative">Aquí aparecerá el texto del final...</p>
+            
+            <!-- Placeholder para imagen o video según el resultado -->
+            <div id="media-container"></div>
 
-    <section id="result">
-      <h2>Your ending</h2>
-      <p>Show the chosen ending here once the flow is implemented.</p>
-    </section>
+            <button id="btn-restart">Intentar de nuevo</button>
+        </div>
+    </main>
 
-  </main>
+    <!-- 🦶 ZONA 4: FOOTER (Informativo y estético) -->
+    <footer>
+        <p class="footer-text">&copy; Proyecto de Desarrollo Web - Inspirado en Juego de Tronos.</p>
+    </footer>
 
-  <footer></footer>
-
-  <script type="module" src="/src/main.js"></script>
+    <!-- ⚙️ SCRIPT PRINCIPAL: Aquí es donde separamos responsabilidades (Lógica del Quiz) -->
+    <script src="src/logic.js"></script>
 </body>
+</html>
