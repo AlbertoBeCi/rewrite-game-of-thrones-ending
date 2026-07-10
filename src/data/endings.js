@@ -1,43 +1,50 @@
 /**
- * Endings Data Module
+ * Módulo de datos de los Finales
  *
- * This file stores alternative Game of Thrones ending templates.
- * Students can expand this array with more endings as they build the experience.
+ * Guarda los 4 finales alternativos que puede arrojar el quiz.
+ * El número está fijado en 4 a propósito: la lógica de desempate de
+ * src/logic.js (ver resolveEnding) asume exactamente 4 finales posibles
+ * para 3 preguntas. Si se agrega o quita un final, hay que revisar
+ * también src/data/questions.js y esa lógica.
  */
 
 const endings = [
   {
     id: 1,
-    title: 'The Iron Throne Is Reclaimed',
+    title: 'El Trono Compartido',
     content:
-      'The realm finds peace when a new ruler takes the throne with wisdom and restraint. The old cycle of fear begins to break, and the people finally see a future beyond war.',
-    characters: ['Jon Snow', 'Daenerys Targaryen', 'Tyrion Lannister'],
-    themes: ['power', 'balance', 'peace'],
-    image: 'throne',
+      'Ningún trono se levanta solo. Dos linajes enfrentados deciden gobernar juntos, y por primera vez el poder se reparte en vez de conquistarse. El miedo que sostenía al reino empieza, por fin, a apagarse.',
+    characters: ['Jon Snow', 'Daenerys Targaryen'],
+    themes: ['amor', 'unión', 'poder compartido'],
+    image: 'amor-unido',
   },
   {
     id: 2,
-    title: 'The North Remains Free',
+    title: 'Cenizas del Trono de Hierro',
     content:
-      'The North rises again as an independent kingdom, protected by its own leaders and its ancient traditions. The old enemies no longer control its fate.',
-    characters: ['Jon Snow', 'Sansa Stark', 'Arya Stark'],
-    themes: ['freedom', 'family', 'justice'],
-    image: 'north',
+      'El fuego de dragón no sirve para conquistar, sino para terminar. Los últimos herederos del linaje eligen destruir el símbolo que llevó a Poniente a la guerra, cerrando un ciclo que llevaba generaciones repitiéndose.',
+    characters: ['Daenerys Targaryen', 'Jon Snow'],
+    themes: ['ruptura', 'sacrificio', 'libertad'],
+    image: 'ciclo-roto',
   },
   {
     id: 3,
-    title: 'A New Dawn for the Realm',
+    title: 'El Rostro de la Justicia',
     content:
-      'The war ends with a different kind of leadership: one based on cooperation rather than conquest. Hope returns to the people, and the story of Westeros changes forever.',
-    characters: ['Tyrion Lannister', 'Brienne of Tarth', 'Samwell Tarly'],
-    themes: ['hope', 'unity', 'future'],
-    image: 'dawn',
+      'La venganza no siempre grita: a veces espera, cambia de cara y golpea en silencio. Con paciencia de años, la justicia llega igual, aunque no tenga la forma que el reino esperaba.',
+    characters: ['Arya Stark', 'Cersei Lannister'],
+    themes: ['venganza', 'justicia', 'astucia'],
+    image: 'venganza',
+  },
+  {
+    id: 4,
+    title: 'La Corona del Norte',
+    content:
+      'No hace falta magia ni profecías para gobernar bien: hace falta haber sobrevivido, haber aprendido y no haber dejado de proteger a los suyos. El Norte elige a quien ya lo defendió mil veces.',
+    characters: ['Sansa Stark'],
+    themes: ['liderazgo', 'independencia', 'resiliencia'],
+    image: 'reina-norte',
   },
 ];
-
-/**
- * TODO: Add more endings here.
- * Students can create at least 5 different alternatives and expand the array.
- */
 
 export default endings;

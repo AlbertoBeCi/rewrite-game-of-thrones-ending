@@ -39,18 +39,19 @@ html {
 .app-container {
     width: 90%;
     max-width: 800px; /* Ancho máximo para legibilidad en escritorio */
-    margin: auto;     /* Centrado vertical y horizontal automático gracias a flex de html */
     padding: 2rem 1rem;
     display: flex;
     flex-direction: column;
     align-items: center; /* Todo el contenido dentro del wrapper centrado horizontalmente */
-    min-height: 100vh; /* Asegura que ocupe la altura si hay poco contenido */
 }
 
 /* 🎬 HEADER / HERO */
 header.hero-section {
     width: 100%;
-    padding-top: 2rem;
+    min-height: 100vh; /* El hero ocupa la pantalla completa */
+    display: flex;
+    align-items: center;    /* Centrado vertical real */
+    justify-content: center; /* Centrado horizontal real */
     margin-bottom: 3rem;
 }
 
@@ -125,17 +126,6 @@ p.subtitle {
     line-height: 1.5;
 }
 
-/* 💡 RESPONSIVE: apilar tarjetas en pantallas pequeñas */
-@media (max-width: 768px) {
-    .endings-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .section-title {
-        font-size: 1.4rem;
-    }
-}
-
 /* 🧠 QUIZ & RESULTADOS (Estilos globales para ambos conteneres) */
 #quiz-container, #result-container {
     width: 100%;
@@ -150,6 +140,33 @@ p.subtitle {
     font-size: 1.3rem;
     line-height: 1.6;
     max-width: 80%; /* Que no se estire demasiado en pantallas grandes */
+}
+
+.quiz-progress {
+    color: var(--color-text-beige);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.options-grid {
+    width: 100%;
+    max-width: 700px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.option-btn {
+    margin-top: 0;
+    padding: 1rem 1.5rem;
+    font-size: 0.95rem;
+    text-transform: none;
+    letter-spacing: normal;
+    text-align: center;
+    line-height: 1.4;
 }
 
 /* 🖐️ BOTONES */
@@ -191,6 +208,37 @@ button:hover {
     overflow: hidden; /* Corta lo que se salga */
 }
 
+/* 🖼️ Placeholder visual por final (sin assets de imagen/video todavía) */
+.media-visual {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-epic);
+    color: var(--color-gold);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    padding: 1rem;
+}
+
+.media-visual--amor-unido {
+    background: linear-gradient(135deg, var(--color-fire), var(--color-sec-brown));
+}
+
+.media-visual--ciclo-roto {
+    background: linear-gradient(135deg, #1a1a2e, var(--color-fire));
+}
+
+.media-visual--venganza {
+    background: linear-gradient(135deg, #2a0a0a, var(--color-sec-brown));
+}
+
+.media-visual--reina-norte {
+    background: linear-gradient(135deg, #0f2a3a, var(--color-gold));
+}
+
 /* 🦶 FOOTER */
 footer {
     margin-top: auto; /* Empuja el footer al fondo de la página si hay poco contenido arriba */
@@ -200,7 +248,7 @@ footer {
     text-align: center;
 }
 
-/* 💡 RESPONSIVE: 1x1 en smartphone (ya lo tenías, no cambia) */
+/* 💡 RESPONSIVE: smartphone */
 @media (max-width: 768px) {
     .endings-grid {
         grid-template-columns: 1fr;
@@ -208,6 +256,19 @@ footer {
 
     .section-title {
         font-size: 1.4rem;
+    }
+
+    h1.main-title {
+        font-size: 2.2rem;
+        letter-spacing: 2px;
+    }
+
+    #media-container {
+        height: 250px;
+    }
+
+    .options-grid {
+        grid-template-columns: 1fr;
     }
 }
 

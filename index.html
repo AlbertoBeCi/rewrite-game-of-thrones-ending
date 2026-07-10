@@ -18,14 +18,9 @@
 </div>
 </header>
 
-<!-- 🧠🏆 ZONA PRINCIPAL: un solo <main>, con dos secciones internas (quiz y resultado) -->
+<!-- 🧠🏆 ZONA PRINCIPAL: un solo <main>, con tres secciones internas (preview, quiz y resultado) -->
 <main>
-  <!-- 🧠 ZONA 2: CONTENEDOR DEL CUESTIONARIO (Aquí inyectaremos las preguntas dinámicamente) -->
-  <section id="quiz-container" class="hidden">
-  <!-- El contenido de las preguntas se generará con JS, no escribimos HTML manual aquí -->
-  </section>
-
-  <!-- 🎴 ZONA INTERMEDIA: 3 tarjetas con los finales alternativos más votados por la comunidad -->
+  <!-- 🎴 ZONA 2: 4 tarjetas con los finales alternativos más votados por la comunidad -->
 <section id="alt-endings-preview" class="alt-endings">
   <h2 class="section-title">Finales que la comunidad hubiera preferido</h2>
   <div class="endings-grid">
@@ -53,6 +48,11 @@
   </div>
 </section>
 
+  <!-- 🧠 ZONA 3: CONTENEDOR DEL CUESTIONARIO (Aquí inyectaremos las preguntas dinámicamente) -->
+  <section id="quiz-container" class="hidden">
+  <!-- El contenido de las preguntas se generará con JS, no escribimos HTML manual aquí -->
+  </section>
+
   <!-- 🏆 ZONA 4: CONTENEDOR DEL RESULTADO (Aquí mostraremos el final y la imagen/video) -->
   <section id="result-container" class="hidden">
   <div class="endings-content">
@@ -70,6 +70,6 @@
 <p class="footer-text">&copy; Proyecto de Desarrollo Web - Inspirado en Juego de Tronos.</p>
 </footer>
 <!-- ⚙️ SCRIPT PRINCIPAL: Aquí es donde separamos responsabilidades (Lógica del Quiz) -->
-<script src="src/logic.js"></script>
+<script type="module" src="src/logic.js"></script>
 </body>
 </html>
