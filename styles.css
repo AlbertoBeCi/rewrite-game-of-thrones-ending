@@ -1,131 +1,207 @@
-/* 🎨 CONFIGURACIÓN DE VARIABLES VISUALES */
-/* Según tu petición: Usamos estrictamente estos códigos hexadecimales */
+/* 🎨 VARIABLES (Misma paleta solicitada) */
 :root {
-    --color-accent-primary: #331C0E;  /* Negro profundo / Texto principal oscuro */
-    --color-secondary:   #67331E;     /* Marrón rojizo noble (Piel/Pieles) */
-    --color-accent-warm: #B9540C;     /* Naranja quemado (Fuego/Terra) */
-    --color-highlight:   #FFF190;     /* Amarillo dorado pálido (Luces/Lunas) */
-    --color-bg-light:    #FCFEF0;     /* Crema casi blanco (Papel antiguo/Damasco) */
-    --color-text-main:   #C38D5F;     /* Beige oscuro / Bronce (Texto suave) */
+    --color-bg-dark: #331C0E;      /* Fondo principal (Negro profundo) */
+    --color-sec-brown: #67331E;    /* Detalles secundarios */
+    --color-fire: #B9540C;         /* Acentos / Botones */
+    --color-gold: #FFF190;         /* Títulos / Textos brillantes */
+    --color-bg-paper: #FCFEF0;     /* Texto principal (Crema) */
+    --color-text-beige: #C38D5F;   /* Texto secundario o decorativo */
     
-    --font-serif: 'Cinzel', serif;    /* Fuente estilo romano/épico (Recomendada) */
-    --font-sans: 'Lato', sans-serif;   /* Fuente moderna para contrastes si es necesario */
+    --font-epic: 'Playfair Display', serif; /* Fuente elegante y épica */
+    --font-modern: 'Montserrat', sans-serif;
 }
 
-/* 🌑 RESET BÁSICO Y FONDO GLOBAL */
+/* 🌑 RESET Y FONDO GLOBAL (Atmósfera Cinematográfica) */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    /* Estilo Cinematográfico Oscuro: Fondo muy oscuro, casi negro */
-    background-color: var(--color-accent-primary); 
-    color: var(--color-text-main);
+html, body {
+    background-color: var(--color-bg-dark); /* Fondo oscuro solicitado */
+    color: var(--color-bg-paper);           /* Texto claro para contraste */
+    font-family: var(--font-modern);
+    overflow-x: hidden;                     /* Evitar scroll horizontal */
     
-    /* Tipografía para sentir "Epicidad" */
-    font-family: var(--font-serif);
-    font-size: 1.2rem;
-    line-height: 1.6;
-    
-    /* Layout minimalista y centrado */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh; /* Ocupa toda la pantalla verticalmente */
-    overflow-x: hidden; /* Evita scroll horizontal no deseado */
-    
-    /* Toque visual sutil (Opcional para efecto ciné): Textura de ruido o granulado */
-    background-image: radial-gradient(circle at center, #3e2215 0%, #0f0806 100%);
+    /* Fondo con gradiente sutil para dar profundidad (estilo "piedra antigua") */
+    background: radial-gradient(circle at center, #4a2c1e 0%, #331C0E 60%, #0f0806 100%);
 }
 
-/* 🏛️ CONTENEDOR PRINCIPAL (Wrapper) */
+/* 🏛️ Ajuste para que el contenido no flote en el centro de la pantalla vacía */
+html {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 🏠 CONTENEDOR PRINCIPAL (Wrapper) */
 .app-container {
     width: 90%;
-    max-width: 800px; /* Ancho máximo para lectura cómoda en tablets/PC */
-    text-align: center; /* Centrado horizontal de todos los textos */
-    padding: 2rem;
-    
-    /* Transiciones suaves para microinteracciones futuras */
-    transition: all 0.5s ease-in-out;
+    max-width: 800px; /* Ancho máximo para legibilidad en escritorio */
+    margin: auto;     /* Centrado vertical y horizontal automático gracias a flex de html */
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Todo el contenido dentro del wrapper centrado horizontalmente */
+    min-height: 100vh; /* Asegura que ocupe la altura si hay poco contenido */
 }
 
-/* 📜 ESTILOS DE ENCABEZADOS (HERO) */
-h1, h2, h3 {
-    color: var(--color-highlight); /* El título brilla como oro pálido */
-    text-transform: uppercase;
-    letter-spacing: 3px; /* Espaciado amplio para estilo clásico romano */
-    margin-bottom: 1.5rem;
+/* 🎬 HEADER / HERO */
+header.hero-section {
+    width: 100%;
+    padding-top: 2rem;
+    margin-bottom: 3rem;
 }
 
-h1 {
+h1.main-title {
+    font-family: var(--font-epic);
+    color: var(--color-gold);
     font-size: 3.5rem;
-    border-bottom: 2px solid var(--color-accent-warm); /* Línea decorativa inferior */
+    text-transform: uppercase;
+    letter-spacing: 4px; /* Estilo romano/épico */
+    margin-bottom: 0.5rem;
+    text-align: center; /* Centrado explícito dentro del header */
+    border-bottom: 2px solid var(--color-fire); /* Detalle visual */
+    display: inline-block;
     padding-bottom: 1rem;
-    display: inline-block; /* Para centrarlo luego con padding del contenedor */
 }
 
-h2 {
-    font-size: 2.5rem;
-    margin-top: 3rem;
-    color: var(--color-highlight);
+p.subtitle {
+    font-size: 1.2rem;
+    color: var(--color-text-beige);
+    text-align: center; /* Centrado explícito */
+    margin-top: -0.5rem;
 }
 
-p {
-    font-family: var(--font-sans); /* Texto más legible para párrafos largos */
-    font-size: 1.1rem;
-    max-width: 600px;
-    margin: 0 auto 1.5rem auto; /* Márgenes automáticos a la derecha e izquierda para centrar bloque de texto */
+/* 🎴 ZONA INTERMEDIA: Tarjetas de finales alternativos */
+.alt-endings {
+    width: 100%;
+    max-width: 1000px;
+    margin: 4rem auto;
+    padding: 0 1rem;
+    text-align: center;
 }
 
-/* 🖐️ ESTILOS DE BOTONES (Interactividad sutil) */
+.section-title {
+    font-family: var(--font-epic);
+    color: var(--color-gold);
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 2.5rem;
+}
+
+.endings-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.ending-card {
+    background-color: var(--color-sec-brown);
+    border: 1px solid var(--color-fire);
+    padding: 1.5rem;
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+.ending-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(185, 84, 12, 0.4);
+    border-color: var(--color-gold);
+}
+
+.ending-card h3 {
+    font-family: var(--font-epic);
+    color: var(--color-gold);
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+}
+
+.ending-card p {
+    color: var(--color-bg-paper);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* 💡 RESPONSIVE: apilar tarjetas en pantallas pequeñas */
+@media (max-width: 768px) {
+    .endings-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 1.4rem;
+    }
+}
+
+/* 🧠 QUIZ & RESULTADOS (Estilos globales para ambos conteneres) */
+#quiz-container, #result-container {
+    width: 100%;
+    display: flex; /* Para centrar botones y contenido dentro */
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Clases de utilidad para texto centrado en preguntas/respuestas */
+.question-text, .ending-narrative {
+    text-align: center; /* Centrado automático según tu requisito */
+    font-size: 1.3rem;
+    line-height: 1.6;
+    max-width: 80%; /* Que no se estire demasiado en pantallas grandes */
+}
+
+/* 🖐️ BOTONES */
 button {
     background-color: transparent;
-    border: 2px solid var(--color-accent-warm); /* Borde color "fuego" */
-    color: var(--color-highlight);
-    font-family: var(--font-sans);
-    font-weight: bold;
+    border: 2px solid var(--color-fire);
+    color: var(--color-gold);
+    font-family: var(--font-modern);
     text-transform: uppercase;
     padding: 1rem 2.5rem;
     font-size: 1rem;
     letter-spacing: 2px;
     cursor: pointer;
-    margin-top: 1rem;
-    
-    /* Efecto de sombra suave tipo neón/fuego */
-    box-shadow: 0 0 10px rgba(185, 84, 12, 0.3);
+    margin-top: 1.5rem;
     transition: all 0.3s ease;
 }
 
 button:hover {
-    background-color: var(--color-accent-warm);
-    color: var(--color-accent-primary); /* Texto oscuro sobre fondo naranja */
-    box-shadow: 0 0 20px rgba(185, 84, 12, 0.6);
+    background-color: var(--color-fire);
+    color: var(--color-bg-dark); /* Contraste inverso */
+    box-shadow: 0 0 15px rgba(185, 84, 12, 0.6);
 }
 
-/* 🎭 CLASES DE UTILIDAD PARA LA LÓGICA (OCULTO/VISIBLE) */
+/* 🎭 ESTADO OCULTO */
 .hidden {
-    display: none !important; /* Oculta completamente el bloque para la lógica JS */
+    display: none !important;
 }
 
-/* 🖼️ ESTILO PLACEHOLDER PARA IMÁGENES/FINALS */
-.media-placeholder {
+/* 🖼️ ÁREA DE IMAGEN/VIDEO */
+#media-container {
     width: 100%;
-    height: 300px; /* Altura base para mantener proporción */
+    height: 400px; /* Altura fija para mantener proporción cinematográfica */
     background-color: #2a1a10;
     margin-top: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid var(--color-secondary);
-    color: var(--color-text-main);
-    font-style: italic;
+    border: 1px solid var(--color-sec-brown);
+    overflow: hidden; /* Corta lo que se salga */
 }
 
-/* Responsive básico para móviles */
+/* 🦶 FOOTER */
+footer {
+    margin-top: auto; /* Empuja el footer al fondo de la página si hay poco contenido arriba */
+    padding-bottom: 2rem;
+    color: var(--color-text-beige);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* 💡 RESPONSIVE BÁSICO */
 @media (max-width: 768px) {
-    h1 { font-size: 2.5rem; }
-    h2 { font-size: 2rem; }
-    .app-container { width: 95%; padding: 1.5rem; }
+    h1.main-title { font-size: 2.5rem; }
+    .app-container { width: 95%; padding: 1.5rem 0.5rem; }
 }
