@@ -200,8 +200,20 @@ footer {
     text-align: center;
 }
 
-/* 💡 RESPONSIVE BÁSICO */
+/* 💡 RESPONSIVE: 1x1 en smartphone (ya lo tenías, no cambia) */
 @media (max-width: 768px) {
-    h1.main-title { font-size: 2.5rem; }
-    .app-container { width: 95%; padding: 1.5rem 0.5rem; }
+    .endings-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 1.4rem;
+    }
+}
+
+/* 💡 RESPONSIVE: 2x2 en tablet */
+@media (max-width: 1024px) {
+    .endings-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
